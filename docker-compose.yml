@@ -1,9 +1,9 @@
-version: "2"
+version: "3"
 
 services:
   app:
-    image: juniyadi/php-composer
-    restart: on-failure
+    image: juniyadi/php-composer:7.4
+    restart: "no"
     tty: true
     volumes:
       - ./code:/code:rw,cached
@@ -12,13 +12,13 @@ services:
 
   redis:
     image: redis
-    restart: on-failure
+    restart: "no"
     networks:
       - code-network
 
   web:
     image: nginx:alpine
-    restart: on-failure
+    restart: "no"
     tty: true
     ports:
       - "80:80"
@@ -31,7 +31,7 @@ services:
   db:
     image: mysql:8
     command: --default-authentication-plugin=mysql_native_password
-    restart: on-failure
+    restart: "no"
     volumes:
       - ./data:/var/lib/mysql
     environment:
@@ -46,7 +46,10 @@ services:
 
   mail:
     image: mailhog/mailhog
-    restart: on-failure
+    restart: "no"
+    command: ["-storage=maildir", "-maildir-path=/maildir"]
+    volumes:
+      - ./maildir:/maildir
     ports:
       - "1025:1025"
       - "8025:8025"
