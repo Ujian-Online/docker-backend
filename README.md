@@ -26,7 +26,26 @@ docker-compose down
 
 ### ENV File
 
-Pada folder **CODE**, Copy dan rename file **.env.example** menjadi **.env**
+Pada folder **CODE**, Copy dan rename file **.env.example** menjadi **.env**, dan ubah data mysql, cache dan redis seperti dibawah ini.
+
+```
+DB_CONNECTION=mysql
+DB_HOST=db
+DB_PORT=3306
+DB_DATABASE=laravel_dock
+DB_USERNAME=laravel
+DB_PASSWORD=laravel
+
+BROADCAST_DRIVER=redis
+CACHE_DRIVER=redis
+QUEUE_CONNECTION=redis
+SESSION_DRIVER=redis
+SESSION_LIFETIME=120
+
+REDIS_HOST=redis
+REDIS_PASSWORD=null
+REDIS_PORT=6379
+```
 
 ### First Command
 
