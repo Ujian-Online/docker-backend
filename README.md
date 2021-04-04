@@ -51,7 +51,15 @@ REDIS_PORT=6379
 
 ```
 docker-compose exec app composer install
-docker-compose exec node yarn install && yarn dev
 docker-compose exec app php artisan key:generate
 docker-compose exec app php artisan migrate
+```
+
+
+### JS & CSS Update (Optional)
+
+Karena disini menggunakan laravel mix, untuk install package nodejs, maka jalankan command berikut:
+
+```
+docker-compose exec node yarn install && yarn dev
 ```
