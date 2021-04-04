@@ -9,7 +9,7 @@ services:
       - ./code:/code:rw,cached
     networks:
       - code-network
-      
+
   node:
     image: node:14-alpine
     restart: "no"
@@ -25,6 +25,9 @@ services:
   redis:
     image: redis
     restart: "no"
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - ./redis:/data
     networks:
       - code-network
 
