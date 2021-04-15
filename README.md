@@ -3,7 +3,7 @@
 ## Clone
 
 ```
-git clone --recurse-submodules --remote-submodules git@github.com:Ujian-Online/docker-backend.git
+git clone --recurse-submodules git@github.com:Ujian-Online/docker-backend.git
 ```
 
 ## Start Docker
