@@ -45,6 +45,15 @@ SESSION_LIFETIME=120
 REDIS_HOST=redis
 REDIS_PASSWORD=null
 REDIS_PORT=6379
+
+MAIL_MAILER=smtp
+MAIL_HOST=mail
+MAIL_PORT=1025
+MAIL_USERNAME=testuser
+MAIL_PASSWORD=testpassword
+MAIL_ENCRYPTION=null
+MAIL_FROM_ADDRESS="noreply@admin-staging.lsp-mpsdm.com"
+MAIL_FROM_NAME="${APP_NAME}"
 ```
 
 ### First Command
