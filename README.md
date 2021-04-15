@@ -62,7 +62,7 @@ MAIL_FROM_NAME="${APP_NAME}"
 docker-compose exec app composer install
 docker-compose exec app php artisan key:generate
 docker-compose exec app php artisan migrate
-docker-compose exec app php passport:install
+docker-compose exec app php artisan passport:install
 ```
 
 
